@@ -20,7 +20,7 @@
 
 $nsecurl = 'http://'.$_SERVER['HTTP_HOST'];
 $cartdir = BITCART_PKG_URL;
-$securl  = 'https://'$_SERVER['HTTP_HOST'];
+$securl  = 'https://'.$_SERVER['HTTP_HOST'];
 $secdir  = BITCART_PKG_URL;
 $maintdir= BITCART_PKG_URL.'maint';
 
