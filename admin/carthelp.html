@@ -1,0 +1,244 @@
+<!--
+FishCart: an online catalog management / shopping system
+Copyright (C) 1997-2002  FishNet, Inc.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
+USA.
+
+   N. Michael Brennen
+   FishNet(R), Inc.
+   850 S. Greenville, Suite 102
+   Richardson,  TX  75081
+   http://www.fni.com/
+   mbrennen@fni.com
+   voice: 972.669.0041
+   fax:   972.669.8972
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<link rel=stylesheet href="../style.css" type="text/css" />
+<title>FishCart Help</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h2 align="center">FishCart Shopping Cart Help</h2>
+
+<hr />
+
+<a name="unselected">
+<h2>
+Context Sensitive Help
+</h2>
+</a>
+
+<b>
+If you have a Javascript enabled browser, just click into the field
+that you need help on, then roll your mouse over the Help button;
+a context sensitive screen will pop up automatically for that field.
+</b>
+
+<p>
+
+<b>
+If your browser does not support Javascript, then just click on the
+Help button and find the particular help section you need.
+</b></ul>
+
+</p>
+<a name="descr">
+<h2>
+Product Description
+</h2>
+</a>
+
+<ul>
+<li><b>
+The product description can contain up to 255 characters; it can
+contain HTML markup, such as &lt;font&gt;, &lt;br&gt;, etc.  The text
+should NOT be wrapped with quote signs (&quot;...&quot;).
+</b></li>
+
+</ul>
+
+<a name="uri">
+<h2>
+Web Image URIs
+</h2>
+</a>
+
+<ul>
+<li><b>
+The URIs for various Web images should be absolute
+file specifications, such as &quot;/images/sandbanr.gif&quot;.  The
+quote signs should NOT be given as part of the specification.
+</b>
+</li>
+</ul>
+
+<a name="product">
+<h2>
+Product Image URI
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to the product graphic for the main catalog page.
+<li>Example: <i>/images/bkground.jpg</i>
+</b></li>
+</ul>
+
+<a name="dimensions">
+<h2>
+Graphic Width/Height
+</h2>
+</a>
+
+<ul>
+<li><b>
+The width and height of a graphic are given in pixels; use a graphics
+program to find the dimensions of each graphic.  Specifying the
+graphic size allows the Web page text to begin displaying more quickly
+in most browsers.
+</b></li>
+</ul>
+
+<a name="prodcat">
+<h2>
+Product/Category Association
+</h2>
+</a>
+
+<ul><b>
+<li>Select a category to see all products that are associated with
+that category.  You will be able to add or delete products in the category.
+<li>There is no limit on the number of categories a given product can
+be listed in.
+</b></li>
+</ul>
+
+<a name="sku">
+<h2>
+Product SKU
+</h2>
+</a>
+
+<ul>
+<li><b>
+The format of the SKU is dependent on each client's particular
+inventory identification scheme.  Enter the SKU as required,
+respecting capital letter and numbers as your inventory control
+requires.
+</b></li>
+</ul>
+
+<a name="price">
+<h2>
+Product Price
+</h2>
+</a>
+
+<ul>
+<li><b>
+Enter the product price as below.  An example of a valid price would
+be 1345.00.  This price will be used for cart calculations, so it must
+be entered exactly as required.</li>
+<ul>
+	<li>with exactly 2 decimal places</li>
+	<li>without a leading currency sign</li>
+	<li>without commas</li>
+</ul>
+</b></ul>
+
+<a name="invqty">
+<h2>
+Product Inventory Quantity
+</h2>
+</a>
+
+<ul>
+<li><b>
+	<i>This is not currently implemented.</i></b></li>
+</ul>
+
+<a name="newcat">
+<h2>
+New Product Category Selection
+</h2>
+</a>
+
+<ul>
+<li><b>
+The product will be placed in the selected categories automatically
+when the product is added to the database.  You may add the product to
+other categories also as required; there is no limit on the number of
+categories a product can be listed in.
+</b></li></ul>
+
+<a name="showall">
+<h2>
+Show All Products
+</h2>
+</a>
+
+<ul>
+<li><b>
+Put an 'X' in this box to show all products in the modify/delete list.
+</b></li></ul>
+
+<a name="skusearch">
+<h2>
+SKU Search Options
+</h2>
+</a>
+
+<ul>
+<b>
+	<li>Enter a specific SKU to modify or delete.</li>
+	<li>OR, enter a partial SKU pattern and check:</li>
+<li>&quot;SKU Begins With&quot; to select all SKUs that begin
+with the pattern in the SKU field.</li>
+<li>&quot;SKU Containsquot; to select all SKUs that have the
+SKU pattern anywhere in them.</li>
+<li>&quot;SKU Ends With&quot; to select all SKUs that end
+with the pattern in the SKU field.</li>
+</b></ul>
+
+<a name="hex">
+<h2>
+Web Page Color Hex Values
+</h2>
+</a>
+
+<ul><b>
+<li>The hexadecimal color values given on Web pages are exactly six
+valid hex characters, from 0-9, A-F or a-f.</li>
+<li>These fields can be blank; colors will be the browser default.</li>
+<li>These fields are case independent.</li>
+</b></ul>
+
+<p>
+<hr>
+</p>
+
+<address>
+&copy; 1999 FishNet<sup><font size="-2">&reg;</font></sup>, Inc.<br />
+</address>
+
+</body>
+</html>

@@ -1,0 +1,465 @@
+/*FORM element controls*/
+
+INPUT {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    }
+
+TEXTAREA {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    }
+
+SELECT {
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    }
+
+/*.text controls the majority of the text in FishCart*/
+
+.text  { 
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.text hr { 
+	color: #000000;
+	background-color: #666666;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.text  A:link {
+	color: #990000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.text  A:active {
+	color: #990000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.text  A:visited {
+	color: #990000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.text A:hover {
+	color: #c96;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.div  {
+	color: #990000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.keywordsearch Controls only the appearance of the keyword search input box*/
+
+.keywordsearch { 
+	width: 125px;
+	border-top: 1px solid #000000;
+	border-left: 1px solid #666666;
+	border-bottom: 1px solid #CCCCCC;
+	border-right: 1px solid #999999;
+	font: 10px Arial, Helvetica, sans-serif;
+	margin: 5px 0;
+	}
+
+/*.header controls things such as Category links across the top section of display*/
+
+.header  {
+	color: #000000;
+	font-weight: normal;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.header b  {
+	color: #000000;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.header  A:link {
+	color: #990000;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.header  A:active {
+	color: #990000;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.header  A:visited {
+	color: #990000;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.header A:hover  {
+	color: #c96;
+	font-weight: bold;
+	font-size: 13px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.catlinks  {
+	color: #000000;
+	font-weight: normal;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.catlinks  {
+	color: #000000;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.catlinks  A:link {
+	color: #990000;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.catlinks  A:active {
+	color: #990000;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.catlinks  A:visited {
+	color: #990000;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.catlinks A:hover  {
+	color: #c96;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.navtext  {
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.navtext A:link  {
+	color: #333333;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.navtext A:active  {
+	color: #669;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.navtext A:visited  {
+	color: #333333;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.navtext A:hover  {
+	color: #c96;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.divrow controls the main rows in showcart and orderform*/
+
+.divrow  {
+	background-color: #333333;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.subdivrow controls the secondary rows in showcart and orderform*/
+
+.subdivrow  {
+	background-color: #CCCCCC;
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+	
+.subdivrow i {
+	background-color: #CCCCCC;
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.showcartmainbg controls the appearance of main background table*/
+
+.showcartmainbg  {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.showcartdisplaybg controls the appearance of the product display table background*/
+
+.showcartdisplaybg  {
+	background-color: #666666;
+	color: #000000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.showcartcell controls the appearance of all the remaining cells in showcart*/
+
+.showcartcell  {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.showcartcell  A:link {
+	color: #990000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.showcartcell  A:active {
+	color: #990000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.showcartcell  A:visited {
+	color: #990000;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+.showcartcell A:hover {
+	color: #c96;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.orderformcell controls the appearance of all the remaining cells in orderform*/
+
+.orderformcell  {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.previewcell controls the appearance of all the remaining cells in preview*/
+
+.previewcell  {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: normal;
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.paymentcell controls the appearance of all the remaining cells in payment*/
+
+.paymentcell  {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+/*.contributecell controls the appearance of all the remaining cells in contribute*/
+
+.contributecell  {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-weight: normal;
+	font-size: 11px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	}
+
+ul {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	}
+	#button {
+	width: 133px;
+	padding: 0 0 1em 0;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Lucida, Geneva, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	border-left: 0px solid #666666;
+	border-right: 0px solid #CCCCCC;
+	border-top: 0px solid #000000;
+	border-bottom: 0px solid #000000;
+	color: #333;
+	}	
+   #button ul {
+	list-style: none;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0;
+	border-left: 0px solid #666666;
+	border-right: 0px solid #CCCCCC;
+	border-top: 0px solid #000000;
+	border-bottom: 0px solid #000000;
+	background-color: #000000;
+	}
+	
+	#button li {
+	border-left: 0px solid #666666;
+	border-right: 0px solid #CCCCCC;
+	border-top: 0px solid #000000;
+	border-bottom: 0px solid #000000;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	}
+	
+	#button li a {
+	display: block;
+	padding: 5px 0px 5px 0.5em;
+	border-left: 5px solid #666666;
+	border-right: 5px solid #CCCCCC;
+	border-top: 0px solid #000000;
+	border-bottom: 0px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #000000;
+	color: #fff;
+	text-decoration: none;
+	width: 100%;
+	}
+
+	html>body #button li a {
+	width: auto;
+	}
+	
+	#button li a:hover {
+	border-left: 5px solid #666666;
+	border-right: 5px solid #000000;
+	border-top: 0px solid #000000;
+	border-bottom: 0px solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: #CCCCCC;
+	color: #000000;
+	}
+
+body {
+	scrollbar-base-color: #000000;
+	scrollbar-arrow-color: #FFFFFF;
+	scrollbar-3d-light-color: #EEEEEE;
+	scrollbar-dark-shadow-color: #CCCCCC;
+	scrollbar-face-color: #000000;
+	scrollbar-highlight-color: #EEEEEE;
+	scrollbar-shadow-color: #CCCCCC;
+	}

@@ -1,0 +1,303 @@
+<!--
+FishCart: an online catalog management / shopping system
+Copyright (C) 1997-2002  FishNet, Inc.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
+USA.
+
+   N. Michael Brennen
+   FishNet(R), Inc.
+   850 S. Greenville, Suite 102
+   Richardson,  TX  75081
+   http://www.fni.com/
+   mbrennen@fni.com
+   voice: 972.669.0041
+   fax:   972.669.8972
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>FishCart Help</title>
+</HEAD>
+
+<body bgcolor="#ffffec">
+
+<h2 align=center>Online FishCart Help</h2>
+<hr>
+
+<a name="unselected">
+<h2>
+Context Sensitive Help
+</h2>
+</a>
+
+<b>
+If you have a Javascript enabled browser, just click into the field
+that you need help on, then roll your mouse over the Help button;
+a context sensitive screen will pop up automatically for that field.
+</b>
+
+<p>
+
+<b>
+If your browser does not support Javascript, then just click on the
+Help button and find the particular help section you need.
+</b></ul>
+
+<a name="homeurl">
+<h2>
+Home Page URL
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the full URL of your home page.
+<li>Example: <i>http://www.yourdomain.com/</i>
+</b></ul>
+
+<a name="carturl">
+<h2>
+Online Catalog Page URL
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the full URL of your online catalog page.
+This is the main page for the shopping cart.
+<li>Example: <i>http://www.yourdomain.com/resources/</i>
+</b></ul>
+
+<a name="webtitle">
+<h2>
+Web Page Title
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the text that will appear both as the HTML &lt;title&gt; and
+as a banner across the top of the page.
+<li>Keep the title short; a few precise words is best.
+</b></ul>
+
+<a name="back">
+<h2>
+Background Graphic URI
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to the background texture graphic for the main catalog page.
+<li>Example: <i>/images/bkground.jpg</i>
+</b></ul>
+
+<a name="logo">
+<h2>
+Main Page Masthead Logo
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to the masthead logo graphic for the main catalog page.
+<li>Example: <i>/images/logo.gif</i>
+</b></ul>
+
+<a name="dimen">
+<h2>
+Graphic Dimensions
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the dimensions in pixels of the appropriate graphic image.
+<li><i>Optional;</i>
+if not specified, the values will be set to those of the specified graphic.
+</b></ul>
+
+<a name="color">
+<h2>
+Web Page Color Hex Values
+</h2>
+</a>
+
+<ul><b>
+<li>The hexadecimal color values given on Web pages are exactly six
+valid hex characters, from 0-9, A-F or a-f.
+<li>These fields can be blank; colors will be the browser default.
+<li>These fields are case independent.
+<li><a href="colors.html">Hexadecimal Color Chart</a>
+</b></ul>
+
+<a name="headsku">
+<h2>
+Header Product SKU
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; used to specify the product for the header
+product promotional banner.
+<li>The given SKU must already exist in the database.
+</b></ul>
+
+<a name="headbanr">
+<h2>
+Header Product Banner
+</h2>
+</a>
+
+<ul><b>
+<li>Not used unless the Header Product SKU is given.
+<li>If given, overrides the product banner, thumbnail, and picture.
+<li>Enter the absolute path location from your Web directory root
+to the banner graphic.
+<li>Example: <i>/images/headbanner.gif</i>
+</b></ul>
+
+<a name="headtext">
+<h2>
+Header Product Text
+</h2>
+</a>
+
+<ul><b>
+<li>Optional descriptive text for the header product.
+<li>Not recommended; a single banner graphic should be used instead.
+</b></ul>
+
+<a name="footsku">
+<h2>
+Footer Product SKU
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; used to specify the product for the footer
+product promotional banner.
+<li>The given SKU must already exist in the database.
+</b></ul>
+
+<a name="footbanr">
+<h2>
+Footer Product Banner
+</h2>
+</a>
+
+<ul><b>
+<li>Not used unless the Footer Product SKU is given.
+<li>If given, overrides the product banner, thumbnail, and picture.
+<li>Enter the absolute path location from your Web directory root
+to the banner graphic.
+<li>Example: <i>/images/footbanner.gif</i>
+</b></ul>
+
+<a name="foottext">
+<h2>
+Footer Product Text
+</h2>
+</a>
+
+<ul><b>
+<li>Optional descriptive text for the footer product.
+<li>Not recommended; a single banner graphic should be used instead.
+</b></ul>
+
+<a name="cattext">
+<h2>
+Category Header Text
+</h2>
+</a>
+
+<ul><b>
+<li>Optional descriptive text that goes above the category list on the
+main display page.
+<li>HTML markup can be included in the text.
+</b></ul>
+
+<a name="days">
+<h2>
+Days In The New Table
+</h2>
+</a>
+
+<ul><b>
+<li>The number of days that new products are listed in the New Items list.
+<li>This value should be given; there is no default value.
+</b></ul>
+
+<a name="newlogo">
+<h2>
+New Items List Masthead
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; if blank, the standard masthead used.
+<li>If given, overrides the standard masthead on the New Items page.
+<li>Enter the absolute path location from your Web directory root
+to the banner graphic.
+<li>Example: <i>/images/newbanner.gif</i>
+</b></ul>
+
+<a name="speclogo">
+<h2>
+Special Sale Items List Masthead
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; if blank, the standard masthead used.
+<li>If given, overrides the standard masthead on the Special Sale page.
+<li>Enter the absolute path location from your Web directory root
+to the banner graphic.
+<li>Example: <i>/images/specbanner.gif</i>
+</b></ul>
+
+<a name="webfree">
+<h2>
+Zero Price Alternate Text Display
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; if blank, prices will be shown as $0.00.
+<li>If given, replaces the zero price with the given text.
+<li>This is overridden by the same field in the Category database.
+</b></ul>
+
+<a name="webdesctmpl">
+<h2>
+New Product Description Template
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; full HTML can be placed in this field.
+<li>The contents of this field will be placed in the Product Description 
+field of new products added to the online catalog.  This will allow you to
+have a standard display template without having to re-enter it every time.
+</b></ul>
+
+<p>
+<hr>
+
+<address>
+&copy; 1999 FishNet<sup><font size="-2">&reg;</font></sup>, Inc.<br>
+</address>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!-- FishCart Completed Order DTD -->
+
+<!-- container element for the order components below -->
+<!ELEMENT fishcart_orders (
+	order_summary,
+	order_details
+)>
+
+<!ELEMENT order_summary (
+	order_id,
+	date_year,
+	date_month,
+	date_day,
+	date_hour,
+	date_minute,
+	date_second,
+	billing_salutation,
+	billing_firstname,
+	billing_mi,
+	billing_lastname,
+	billing_address_1,
+	billing_address_2,
+	billing_city,
+	billing_state,
+	billing_postcode,
+	billing_country,
+	billing_areacode,
+	billing_phone,
+	billing_email,
+	shipping_salutation,
+	shipping_firstname,
+	shipping_mi,
+	shipping_lastname,
+	shipping_attention,
+	shipping_address_1,
+	shipping_address_2,
+	shipping_city,
+	shipping_state,
+	shipping_postcode,
+	shipping_country,
+	shipping_areacode,
+	shipping_phone,
+	shipping_email,
+	associate_id,
+	cc_name,
+	cc_type,
+	cc_number,
+	cc_exp_year,
+	cc_exp_month,
+	order_line_count,
+	order_subtotal,
+	order_shipping,
+	order_tax,
+	order_total,
+	order_discount,
+	order_contribution,
+	order_grand_total,
+	order_comment_1,
+	order_comment_2,
+	order_comment_3,
+	order_comment_4,
+	order_comment_5
+)>
+
+<!ELEMENT order_details (
+	detail_order_id,
+	detail_sku,
+	detail_quantity,
+	detail_price,
+	detail_extension
+)>
+
+<!-- FishCart order components -->
+<!ELEMENT fishcart_orders ( order_summary, order_details* )>
+
+<!ELEMENT summary_orderid ( #PCDATA )>
+<!ELEMENT summary_date_year ( #PCDATA )>
+<!ELEMENT summary_date_month ( #PCDATA )>
+<!ELEMENT summary_date_day ( #PCDATA )>
+<!ELEMENT summary_date_hour ( #PCDATA )>
+<!ELEMENT summary_date_minute ( #PCDATA )>
+<!ELEMENT summary_date_second ( #PCDATA )>
+<!ELEMENT summary_billing_salutation ( #PCDATA )>
+<!ELEMENT summary_billing_firstname ( #PCDATA )>
+<!ELEMENT summary_billing_mi ( #PCDATA )>
+<!ELEMENT summary_billing_lastname ( #PCDATA )>
+<!ELEMENT summary_billing_suffix ( #PCDATA )>
+<!ELEMENT summary_billing_addr1 ( #PCDATA )>
+<!ELEMENT summary_billing_addr2 ( #PCDATA )>
+<!ELEMENT summary_billing_city ( #PCDATA )>
+<!ELEMENT summary_billing_state ( #PCDATA )>
+<!ELEMENT summary_billing_postcode ( #PCDATA )>
+<!ELEMENT summary_billing_country ( #PCDATA )>
+<!ELEMENT summary_billing_areacode ( #PCDATA )>
+<!ELEMENT summary_billing_phone ( #PCDATA )>
+<!ELEMENT summary_billing_email ( #PCDATA )>
+<!ELEMENT summary_shipping_salutation ( #PCDATA )>
+<!ELEMENT summary_shipping_firstname ( #PCDATA )>
+<!ELEMENT summary_shipping_mi ( #PCDATA )>
+<!ELEMENT summary_shipping_lastname ( #PCDATA )>
+<!ELEMENT summary_shipping_attention ( #PCDATA )>
+<!ELEMENT summary_shipping_suffix ( #PCDATA )>
+<!ELEMENT summary_shipping_addr1 ( #PCDATA )>
+<!ELEMENT summary_shipping_addr2 ( #PCDATA )>
+<!ELEMENT summary_shipping_city ( #PCDATA )>
+<!ELEMENT summary_shipping_state ( #PCDATA )>
+<!ELEMENT summary_shipping_postcode ( #PCDATA )>
+<!ELEMENT summary_shipping_country ( #PCDATA )>
+<!ELEMENT summary_shipping_areacode ( #PCDATA )>
+<!ELEMENT summary_shipping_phone ( #PCDATA )>
+<!ELEMENT summary_shipping_email ( #PCDATA )>
+<!ELEMENT summary_associate_id ( #PCDATA )>
+<!ELEMENT summary_cc_name ( #PCDATA )>
+<!ELEMENT summary_cc_number ( #PCDATA )>
+<!ELEMENT summary_cc_year_exp ( #PCDATA )>
+<!ELEMENT summary_cc_month_exp ( #PCDATA )>
+<!ELEMENT summary_order_subtotal ( #PCDATA )>
+<!ELEMENT summary_order_shipping ( #PCDATA )>
+<!ELEMENT summary_order_tax ( #PCDATA )>
+<!ELEMENT summary_order_total ( #PCDATA )>
+<!ELEMENT summary_order_contribution ( #PCDATA )>
+<!ELEMENT summary_order_grand_total ( #PCDATA )>
+
+<!ELEMENT detail_orderid ( #PCDATA )>
+<!ELEMENT detail_sku ( #PCDATA )>
+<!ELEMENT detail_quantity ( #PCDATA )>
+<!ELEMENT detail_price ( #PCDATA )>
+<!ELEMENT detail_extension ( #PCDATA )>

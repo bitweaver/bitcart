@@ -1,0 +1,309 @@
+<!--
+FishCart: an online catalog management / shopping system
+Copyright (C) 1997-2002  FishNet, Inc.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
+USA.
+
+   N. Michael Brennen
+   FishNet(R), Inc.
+   850 S. Greenville, Suite 102
+   Richardson,  TX  75081
+   http://www.fni.com/
+   mbrennen@fni.com
+   voice: 972.669.0041
+   fax:   972.669.8972
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>FishCart Help</title>
+</HEAD>
+
+<body bgcolor="#ffffec">
+
+<h2 align=center>Online FishCart Help</h2>
+<hr>
+
+<a name="unselected">
+<h2>
+Context Sensitive Help
+</h2>
+</a>
+
+<b>
+If you have a Javascript enabled browser, just click into the field
+that you need help on, then roll your mouse over the Help button;
+a context sensitive screen will pop up automatically for that field.
+</b>
+
+<p>
+
+<b>
+If your browser does not support Javascript, then just click on the
+Help button and find the particular help section you need.
+</b></ul>
+
+<a name="sdescr">
+<h2>
+Short Product Description
+</h2>
+</a>
+
+<ul>
+<li><b>
+The short description is used when viewing the shopping cart contents;
+it can contain up to 255 characters.  It can contain HTML markup,
+such as &lt;font&gt;, &lt;br&gt;, etc.  The text should NOT be
+wrapped with quote signs (&quot;...&quot;).
+</b></ul>
+
+<a name="descr">
+<h2>
+Product Description
+</h2>
+</a>
+
+<ul>
+<li><b>
+The product description can contain up to 255 characters; it can
+contain HTML markup, such as &lt;font&gt;, &lt;br&gt;, etc.  The text
+should NOT be wrapped with quote signs (&quot;...&quot;).
+</b></ul>
+
+<a name="keywords">
+<h2>
+Product Keywords
+</h2>
+</a>
+
+<ul><b>
+<li>The product keywords field can contain up to total 255 characters.
+All searches against keywords the buyer enters are done against the
+keywords in this field.  This can help provide alternate ways for
+clients to find products by other than listed categories.
+<li>Enter all desired keywords as space separated words; no
+commas or quotes are necessary.
+</b></ul>
+
+<a name="av">
+<h2>
+Audio / Video Clip URI
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to an audio or video file for this product.
+<li>Any type of Internet audio or video can be used in this link.
+<li>Leave blank if no audio or video clip is available for this product.
+<li>Example: <i>/sound/soundbyte.ram</i>
+</b></ul>
+
+<a name="pic">
+<h2>
+Product Image URI
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to the product graphic.
+<li>Example: <i>/images/prodpic.gif</i>
+</b></ul>
+
+<a name="tpic">
+<h2>
+Product Thumbnail Image URI
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to the product thumbnail graphic.
+<li>Example: <i>/images/prodthumb.gif</i>
+<li>The thumbnail graphic is optionally used:<br>
+<i>if</i> a product is specified in a promotional slot and<br>
+<i>if</i> the top banner graphic in the Web table and the
+product banner are both undefined.
+<li>This field is optional.
+</b></ul>
+
+<a name="banr">
+<h2>
+Product Banner Image URI
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to the product banner graphic.
+<li>Example: <i>/images/prodbanner.gif</i>
+<li>The product banner graphic is optionally used:<br>
+<i>if</i> a product is specified in a promotional slot and<br>
+<i>if</i> the top banner graphic in the Web table is undefined.
+<li>This field is optional.
+</b></ul>
+
+<a name="dimensions">
+<h2>
+Graphic Width/Height
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the width and height of the graphic in pixels.
+<li><i>Optional;</i>
+if not specified, the values will be set to those of the specified graphic.
+</b></ul>
+
+<a name="sku">
+<h2>
+Product SKU
+</h2>
+</a>
+
+<ul>
+<li><b>
+The format of the SKU is dependent on each client's particular
+inventory identification scheme.  Enter the SKU as required,
+respecting capital letter and numbers as your inventory control
+requires.
+</b></ul>
+
+<a name="price">
+<h2>
+Product Price
+</h2>
+</a>
+
+<ul>
+<li><b>
+Enter the product price as below.  An example of a valid price would
+be 1345.00.  This price will be used for cart calculations, so it must
+be entered exactly as required.
+<ul>
+<li>with exactly 2 decimal places
+<li>without a leading currency sign
+<li>without commas
+</ul>
+</b></ul>
+
+<a name="invqty">
+<h2>
+Product Inventory Quantity
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; check the enable inventory tracking checkbox 
+to track inventory balance.
+<li>Order quantities will not be allowed to exceed outstanding inventory.
+<li>Inventory balance is downcounted when the order is placed.
+<li>When inventory goes to 0, the product will no longer be displayed 
+for sale.
+</b></ul>
+
+<a name="prodoffer">
+<h2>
+Product Offer # / Motivation Code
+</h2>
+</a>
+
+<ul><b>
+<li>Optional; enter a product offer number or motivation code for this 
+product.  The format and length of this field are vendor dependent;
+it can contain both numbers and alpha characters.
+</b></ul>
+
+<a name="newcat">
+<h2>
+New Product Category Selection
+</h2>
+</a>
+
+<ul>
+<li><b>
+The product will be placed in the selected categories automatically
+when the product is added to the database.  You may add the product to
+other categories also from the product maintenance page; there is no
+limit on the number of categories a product can be listed in.
+</b></ul>
+
+<a name="skumod">
+<h2>
+Modify/Delete Product
+</h2>
+</a>
+
+<ul><b>
+<li>Select a product to modify or delete;
+<li>Click the appropriate &quot;Modify&quot; or &quot;Delete&quot; button.
+</b></ul>
+
+<a name="splash">
+<h2>
+Attention Drawing Splash Graphic
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the absolute path location from your Web directory root
+to a <i>small</i> accent graphic to draw attention to the item.
+<li>Example: <i>/images/splash.gif</i>
+<li>This field is optional.
+</b></ul>
+
+<a name="saleprice">
+<h2>
+Sale Price
+</h2>
+</a>
+
+<ul>
+<li><b>
+Enter the sale price as below.  An example of a valid price would
+be 1345.00.  This price will be used for cart calculations, so it must
+be entered exactly as required.
+<ul>
+<li>with exactly 2 decimal places
+<li>without a leading currency sign
+<li>without commas
+</ul>
+</b></ul>
+
+<a name="saledate">
+<h2>
+Sale Start/End Dates
+</h2>
+</a>
+
+<ul><b>
+<li>Enter the start and end date of the sale.
+<li>If the current date is after the start and before the end date, the item
+will be shown as on sale.
+<li>Both date fields must be given.
+</b></ul>
+
+<p>
+<hr>
+
+<address>
+&copy; 1999 FishNet<sup><font size="-2">&reg;</font></sup>, Inc.<br>
+</address>
+
+</body>
+</html>
