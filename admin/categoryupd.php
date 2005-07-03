@@ -137,7 +137,7 @@ if($act=="insert") {
  $max_ref = new FC_SQL;
  if ( $databaseeng == 'odbc' && $dialect == 'solid' ){
   $max_ref->query("select catval from cat where rownum < 2 order by catval desc");
- }elseif ( $databaseeng == 'pgsql' ){
+ }elseif ( $databaseeng == 'postgres' ){
   $max_ref->query("select catval from cat order by catval desc limit 1 offset 0");
  }elseif ( $databaseeng == 'mssql' ){
   $max_ref->query("select top 1 catval from cat order by catval desc");

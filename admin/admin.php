@@ -1,12 +1,12 @@
-<?php 
+<?php
 // PHPlib <http://phplib.shonline.de/>
 // PHPlib includes for database independence:
 // require('db_odbc.inc');
 // require('db_mysql.inc');
-// require('db_pgsql.inc');
+// require('db_'postgres'.inc');
 // require('db_oracle.inc');
 // require('db_sybase.inc');
-// 
+//
 // Ran into safe mode restrictions across various cart installs so
 // decided to include the whole file inline.  We can either copy
 // the file and include it, or we include it here.  The cart scales
@@ -16,7 +16,7 @@
 // commit() and rollback() class functions.  For mysql these do nothing
 // but are in place for compatibility.
 
-// see public_pgsql.php also; it is almost identical
+// see public_'postgres'.php also; it is almost identical
 
 require_once( '../bitcart_header_inc.php' );
 
@@ -27,10 +27,7 @@ $secdir  = BITCART_PKG_URL;
 $maintdir= BITCART_PKG_URL.'maint';
 
 global $gBitSystem;
-$gBitSystem->getPreference( 'sender_email' );
-$errorEmail = defined('ERROR_EMAIL') ? ERROR_EMAIL : 
-			  !empty( $gBitSystem->getPreference( 'sender_email' ) ) ? $gBitSystem->getPreference( 'sender_email' ) :
-			  !empty(  $_SERVER['SERVER_ADMIN'] ) ? $_SERVER['SERVER_ADMIN'] : 'root@localhost';
+$errorEmail =$gBitSystem->getErrorEmail();
 
 
 
@@ -40,7 +37,7 @@ function imagepath($img) {
 }
 
 $adm_inc=1;
-$databaseeng = 'pgsql';
+$databaseeng = 'postgres';
 $dialect  = '';
 
 class DBbase_Sql {
@@ -63,20 +60,21 @@ class DBbase_Sql {
 	  $this->Link_ID=$FC_Link_ID;
 	}
 	if ( 0 == $this->Link_ID ) {
-	  $cstr = 'dbname='.$this->Database;
-	  if( $this->Host ){
-	   $cstr .= ' host='.$this->Host;
-	  }
-	  if( $this->User ){
-	   $cstr .= ' user='.$this->User;
-	  }
-	  if( $this->Password ){
-	   $cstr .= ' password='.$this->Password;
-	  }
-	  $this->Link_ID=pg_pconnect($cstr);
-	  if (!$this->Link_ID) {
-		  $this->halt("Link-ID == false, pconnect failed");
-	  }
+		global $gBitDbName, $gBitDbHost, $gBitDbUser, $gBitDbPassword;
+		$cstr = "dbname=".$gBitDbName;
+		if( $this->Host ){
+		 $cstr .= ' host='.$gBitDbHost;
+		}
+		if( $this->User ){
+		 $cstr .= ' user='.$gBitDbUser;
+		}
+		if( $this->Password ){
+		 $cstr .= ' password='.$gBitDbPassword;
+		}
+		$this->Link_ID=pg_pconnect($cstr);
+		if (!$this->Link_ID) {
+			$this->halt("Link-ID == false, pconnect failed");
+		}
     }
   }
 
@@ -96,10 +94,10 @@ class DBbase_Sql {
 
     return $this->Query_ID;
   }
-  
+
   function next_record() {
     $this->Record = @pg_fetch_array($this->Query_ID, $this->Row++);
-    
+
     $this->Error = pg_ErrorMessage($this->Link_ID);
     $this->Errno = ($this->Error == "")?0:1;
 
@@ -128,7 +126,7 @@ class DBbase_Sql {
       $this->halt("Metadata query failed.");
     }
     $count = pg_NumFields($id);
-    
+
     for ($i=0; $i<$count; $i++) {
       $res[$i]["table"] = $table;
       $name             = pg_FieldName  ($id, $i);
@@ -137,7 +135,7 @@ class DBbase_Sql {
       $res[$i]["len"]   = pg_FieldSize  ($id, $name);
       $res[$i]["flags"] = "";
     }
-    
+
     pg_FreeResult($id);
     return $res;
   }
@@ -171,7 +169,7 @@ class DBbase_Sql {
   function p($Name) {
     print $this->Record[$Name];
   }
-  
+
   function halt($msg) {
     printf("</td></tr></table><b>Database error:</b> %s<br />\n", $msg);
     printf("<b>PostgreSQL Error</b>: %s (%s)<br />\n",

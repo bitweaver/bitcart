@@ -266,7 +266,7 @@ if(!empty($cat)){
 	}
 	$tbs="prod,prodlang,prodcat,cat";
 	if(!empty($key1)){
-         if( $databaseeng=="pgsql" || $databaseeng=="mssql" ) {
+         if( $databaseeng=="'postgres'" || $databaseeng=="mssql" ) {
 	   $pj.=" and (lower(proddescr) like lower('%$key1%')".
 			" or lower(prodsdescr) like lower('%$key1%')".
 			" or lower(prodsku) like lower('%$key1%')".
@@ -293,7 +293,7 @@ if(!empty($cat)){
 		// keyword search, no categories selected but
 		// get only products in active categories and
 		// sufficient inventory
-         if( $databaseeng=="pgsql" || $databaseeng=="mssql" ) {
+         if( $databaseeng=="'postgres'" || $databaseeng=="mssql" ) {
 		  $pj.="(lower(proddescr) like lower('%$key1%')".
 		    " or lower(prodkeywords) like lower('%$key1%')".
 	        " or lower(prodsdescr) like lower('%$key1%')".

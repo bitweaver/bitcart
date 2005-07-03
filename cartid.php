@@ -150,7 +150,7 @@ if(empty($cartid)){
   $forupd='';
   if ( $databaseeng == 'mysql' ){
    $fm->query('lock tables seq write');
-  }elseif ( $databaseeng == 'pgsql' ){
+  }elseif ( $databaseeng == 'postgres' ){
    $forupd='';
    // http://www.postgresql.org/idocs/index.php?sql-lock.html
    // rollback/commit breaks the lock
@@ -180,7 +180,7 @@ if(empty($cartid)){
 
   if ( $databaseeng == 'mysql' ){
    $fm->query('unlock tables');
-  }elseif ( $databaseeng == 'pgsql' ){
+  }elseif ( $databaseeng == 'postgres' ){
    $fm->query('commit work');
   }elseif ( $databaseeng=='mssql' || $databaseeng=='oracle' ){
    $fm->commit();

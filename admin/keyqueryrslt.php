@@ -79,7 +79,7 @@ if( $numkeys ){
   $numkeys++;
   $fckey->query("select distinct * from keyword where rownum < $numkeys ".
   				"order by keycnt,keyres desc");
- }elseif ( $databaseeng == 'pgsql' ){
+ }elseif ( $databaseeng == 'postgres' ){
   $numkeys++;
   $fckey->query("select distinct * from keyword order by keycnt,keyres desc limit $numkeys,1");
  }elseif ( $databaseeng == 'mssql' ){

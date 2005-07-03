@@ -1,12 +1,12 @@
-<?php 
+<?php
 // PHPlib <http://phplib.shonline.de/>
 // PHPlib includes for database independence:
 // require('db_odbc.inc');
 // require('db_mysql.inc');
-// require('db_pgsql.inc');
+// require('db_'postgres'.inc');
 // require('db_oracle.inc');
 // require('db_sybase.inc');
-// 
+//
 // Ran into safe mode restrictions across various cart installs so
 // decided to include the whole file inline.  We can either copy
 // the file and include it, or we include it here.  The cart scales
@@ -25,7 +25,8 @@ $secdir  = BITCART_PKG_URL;
 $maintdir= BITCART_PKG_URL.'maint';
 
 $pub_inc=1;
-$databaseeng = 'pgsql';
+global $gBitDbType;
+$databaseeng = $gBitDbType;
 $dialect  = '';
 
 class DBbase_Sql {
@@ -48,15 +49,16 @@ class DBbase_Sql {
 	  $this->Link_ID=$FC_Link_ID;
 	}
 	if ( 0 == $this->Link_ID ) {
-		$cstr = "dbname=".$this->Database;
+		global $gBitDbName, $gBitDbHost, $gBitDbUser, $gBitDbPassword;
+		$cstr = "dbname=".$gBitDbName;
 		if( $this->Host ){
-		 $cstr .= ' host='.$this->Host;
+		 $cstr .= ' host='.$gBitDbHost;
 		}
 		if( $this->User ){
-		 $cstr .= ' user='.$this->User;
+		 $cstr .= ' user='.$gBitDbUser;
 		}
 		if( $this->Password ){
-		 $cstr .= ' password='.$this->Password;
+		 $cstr .= ' password='.$gBitDbPassword;
 		}
 		$this->Link_ID=pg_pconnect($cstr);
 		if (!$this->Link_ID) {
@@ -81,10 +83,10 @@ class DBbase_Sql {
 
     return $this->Query_ID;
   }
-  
+
   function next_record() {
     $this->Record = @pg_fetch_array($this->Query_ID, $this->Row++);
-    
+
     $this->Error = pg_ErrorMessage($this->Link_ID);
     $this->Errno = ($this->Error == "")?0:1;
 
@@ -113,7 +115,7 @@ class DBbase_Sql {
       $this->halt("Metadata query failed.");
     }
     $count = pg_NumFields($id);
-    
+
     for ($i=0; $i<$count; $i++) {
       $res[$i]["table"] = $table;
       $name             = pg_FieldName  ($id, $i);
@@ -124,7 +126,7 @@ class DBbase_Sql {
       $res[$i]["len"]   = pg_FieldSize  ($id, $i);
       $res[$i]["flags"] = "";
     }
-    
+
     pg_FreeResult($id);
     return $res;
   }
@@ -158,7 +160,7 @@ class DBbase_Sql {
   function p($Name) {
     print $this->Record[$Name];
   }
-  
+
   function halt($msg) {
     printf("</td></tr></table><b>Database error:</b> %s<br />\n", $msg);
     printf("<b>PostgreSQL Error</b>: %s (%s)<br />\n",

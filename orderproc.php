@@ -157,7 +157,7 @@ if ( $databaseeng == 'mysql' ){
 	"${instid}_ccnums write, coupon write, pw write, ".
 	"weightthresh read");
 
-}elseif ( $databaseeng == 'pgsql' ){
+}elseif ( $databaseeng == 'postgres' ){
 
   // http://www.postgresql.org/idocs/index.php?sql-lock.html
   // rollback/commit breaks the lock
@@ -193,7 +193,7 @@ if( !$fcoc->next_record() ){
  if ( $databaseeng == 'mysql' ){
   $flck->query('unlock tables');
  }
- if ( $databaseeng == 'pgsql' ){
+ if ( $databaseeng == 'postgres' ){
   $flck->query('rollback work');
  }
  exit;
@@ -223,7 +223,7 @@ if( ($zflag1 & $flag_zonetclink) && ($approvetc == 0) ){
   if ( $databaseeng == 'mysql' ){
    $flck->query("unlock tables");
   }
-  if ( $databaseeng == 'pgsql' ){
+  if ( $databaseeng == 'postgres' ){
    $flck->query('rollback work');
   }
   exit;
@@ -262,7 +262,7 @@ if( $contrib_only ) {
   if ( $databaseeng == 'mysql' ){
    $flck->query("unlock tables");
   }
-  if ( $databaseeng == 'pgsql' ){
+  if ( $databaseeng == 'postgres' ){
    $flck->query('rollback work');
   }
   exit;
@@ -298,7 +298,7 @@ if( $contrib_only ) {
   if ( $databaseeng == 'mysql' ){
    $flck->query("unlock tables");
   }
-  if ( $databaseeng == 'pgsql' ){
+  if ( $databaseeng == 'postgres' ){
    $flck->query('rollback work');
   }
   exit;
@@ -354,7 +354,7 @@ if($billing_first=="" || $billing_last=="" ||
   if ( $databaseeng == 'mysql' ){
    $flck->query("unlock tables");
   }
-  if ( $databaseeng == 'pgsql' ){
+  if ( $databaseeng == 'postgres' ){
    $flck->query('rollback work');
   }
   exit;
@@ -376,7 +376,7 @@ if(!eregi("^[a-z0-9_\'\.-]+@[a-z0-9_\.-]+\.[a-z]{2,4}$",$billing_email)){ ?>
   if ( $databaseeng == 'mysql' ){
    $flck->query("unlock tables");
   }
-  if ( $databaseeng == 'pgsql' ){
+  if ( $databaseeng == 'postgres' ){
    $flck->query('rollback work');
   }
   exit;
@@ -397,7 +397,7 @@ if( $onoff != 'on' && $onoff != 'off' ){?>
   if ( $databaseeng == 'mysql' ){
    $flck->query("unlock tables");
   }
-  if ( $databaseeng == 'pgsql' ){
+  if ( $databaseeng == 'postgres' ){
    $flck->query('rollback work');
   }
   exit;
@@ -629,7 +629,7 @@ if(($zflag1 & $flag_zonecc) &&
 		if ( $databaseeng == 'mysql' ){
 			$flck->query("unlock tables");
 		}
-		if ( $databaseeng == 'pgsql' ){
+		if ( $databaseeng == 'postgres' ){
 			$flck->query('rollback work');
 		}
 		exit;
@@ -927,7 +927,7 @@ $fm->commit();
 if ( $databaseeng == 'mysql' ){
  $flck->query("unlock tables");
 }
-if ( $databaseeng == 'pgsql' ){
+if ( $databaseeng == 'postgres' ){
  $flck->query('commit work');
 }
 

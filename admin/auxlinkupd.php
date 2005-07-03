@@ -70,7 +70,7 @@ if ((strlen($title)==0) ||
  $max_seq = new FC_SQL;
  if ( $databaseeng == 'odbc' && $dialect == 'solid' ){
   $max_seq->query("select seq from auxlinks where rownum < 2 order by seq desc");
- }elseif ( $databaseeng == 'pgsql' ){
+ }elseif ( $databaseeng == 'postgres' ){
   $max_seq->query("select seq from auxlinks order by seq desc limit 1,0");
  }elseif ( $databaseeng == 'mssql' ){
   $max_seq->query("select top 1 seq from auxlinks order by seq desc");
