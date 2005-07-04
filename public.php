@@ -70,7 +70,10 @@ class DBbase_Sql {
   function query($Query_String) {
     $this->connect();
 
-#   printf("<br>Debug: query = %s<br>\n", $Query_String);
+global $gDebug;
+if( $gDebug ) {
+   printf("<br>Debug: query = %s<br>\n", $Query_String);
+}
 
     $this->Query_ID = pg_Exec($this->Link_ID, $Query_String);
     $this->Row   = 0;
@@ -178,7 +181,7 @@ class FC_SQL extends DBbase_Sql {
 
   function free_result() {
    if($this->Query_ID) {
-    return pg_FreeResult($this->Query_ID);
+    return @pg_FreeResult($this->Query_ID);
    }
   }
 

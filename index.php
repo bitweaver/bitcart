@@ -57,7 +57,7 @@ $fcrp = new FC_SQL;
 $fcrpl = new FC_SQL;
 
 $fcz = new FC_SQL;
-$fcz->query("select zflag1,zonecurrsym from zone where zoneid=$zid"); 
+$fcz->query("select zflag1,zonecurrsym from zone where zoneid=$zid");
 if($fcz->next_record()){
  $csym=stripslashes($fcz->f("zonecurrsym"));
  $zflag1=(int)$fcz->f("zflag1");
@@ -84,7 +84,7 @@ if( $zflag1 & $flag_zonepwcatalog ){
 }
 
 // get the Web table
-$fcw->query("select * from web where webzid=$zid and weblid=$lid"); 
+$fcw->query("select * from web where webzid=$zid and weblid=$lid");
 $fcw->next_record();
 $srt=$fcw->f("websort");
 $wflag1=(int)$fcw->f('webflags1');
@@ -141,7 +141,7 @@ if( $langchange ){
 <link rel=stylesheet ID href="style.css" type="text/css" />
 <title> <?php echo fc_text("titletag"); ?></title></head>
 
-<body<?php 
+<body<?php
 if($fcw->f("webback")){?> background="<?php echo $fcw->f("webback")?>"<?php }
 if($fcw->f("webtext")){?> text="<?php echo $fcw->f("webtext")?>"<?php }
 if($fcw->f("weblink")){?> link="<?php echo $fcw->f("weblink")?>"<?php }
@@ -151,13 +151,13 @@ if($fcw->f("webbg")){?> bgcolor="<?php echo $fcw->f("webbg")?>"<?php }?>
  marginheight="0" marginwidth="0" topmargin="0" leftmargin="0">
 
 <?php // START OF ESSENTIAL CART DISPLAY CODE ?>
-<!--BEGIN CATEGORY LINKS TABLE--> 
+<!--BEGIN CATEGORY LINKS TABLE-->
 
 <table border="0" cellpadding="5" cellspacing="0" width="780">
 <tr><td class="navtext" align="left" valign="top" width="135">
 <?php include('fc_leftnav.php');?>
 </td><td align="left" valign="top">
-<!--OPEN CELL FOR FISHCART CODE--> 
+<!--OPEN CELL FOR FISHCART CODE-->
 <table class="text" border="0" cellpadding="0" cellspacing="0" width="580">
 
 <!-- FIRST COLUMN -->
@@ -169,8 +169,8 @@ if($fcw->f("webbg")){?> bgcolor="<?php echo $fcw->f("webbg")?>"<?php }?>
 <!-- BODY TEXT GOES HERE -->
 <tr><td align="left" colspan="3">
 <p>
-<?php 
-//echo fc_text("welcome"); 
+<?php
+//echo fc_text("welcome");
 echo $lwelcome;
 ?>
 </p>
@@ -194,7 +194,7 @@ if( $zflag1 & $flag_zoneproddate ){
 // look for Front Page Promotion products
 
 if( $fp_cat ){
-	$pj.="catval=$fp_cat and catval=pcatval and pcatsku=prodsku and ". 
+	$pj.="catval=$fp_cat and catval=pcatval and pcatsku=prodsku and ".
 	"pcatsku=prodlsku and catlid=$lid and prodlid=$lid and prodzid=$zid ".
 	"and prodlzid=$zid";
 
@@ -228,7 +228,7 @@ while( $fcp->next_record() ){
 
 <?php
  //bvo
- if ($mode=="mp"||$mode==""){
+ if( empty( $mode ) || $mode=="mp" ){
  //if mode multiple products or if it's empty
  if($fcp->f("prodtpic")){ // show the product thumbnail picture (if defined)
  if($fcp->f("prodpic")||$fcp->f("proddescr")){
@@ -282,7 +282,7 @@ echo fc_text('click2select');
 <?php
 }
 } //end mode=mp or empty
-if ($mode=="sp"){ //begin showing product detail
+if( isset( $mode ) && $mode=="sp"){ //begin showing product detail
  echo '<font size="2"><a href=javascript:history.back();>'.fc_text("back2cat").'</a></font><br /><br />';
  if(($fcp->f("prodpic")) && ($psku !='')){ // show the product picture (if defined)
  ?>
@@ -333,7 +333,7 @@ echo stripslashes($fcp->f("proddescr")).'<br />';
  $poptogrp=-1;		// -1 is initial value
  $poptgrpcnt=0; 	// # of options per group
  $poptgrplst='';	// : separated list of all represented groups
- 
+
  $fco->query("select poptid,poptname,poptsdescr,poptsetup,poptprice,poptssalebeg,".
  	"poptssaleend,poptssaleprice,poptsalebeg,poptsaleend,poptsaleprice,poptgrp,".
 	"poptflag1,pgrpname from prodopt,prodoptgrp ".
@@ -406,7 +406,7 @@ echo stripslashes($fcp->f("proddescr")).'<br />';
     $csku=ereg_replace(stripslashes($fco->f("poptskusub")),stripslashes($fco->f("poptskumod")),$csku);
   }elseif( $poptflag1 & $flag_poptskusub ){
     $csku=stripslashes($fco->f("poptskumod"));
-  }             
+  }
 
   echo "<option value=\"${poptid}\"> $poptname $poptsdescr\n";
 
@@ -414,7 +414,7 @@ echo stripslashes($fcp->f("proddescr")).'<br />';
    echo '&nbsp;&nbsp;&nbsp;&nbsp;'.fc_text("setup").
 		sprintf("%s%.2f\n",$csym,$poptsetup);
   }
-  
+
   echo '&nbsp;&nbsp;&nbsp;&nbsp;'.fc_text("price");
   if( ($poptflag1 & $flag_poptprcrel) && $poptprice ){
    $relflg='+';
@@ -427,11 +427,11 @@ echo stripslashes($fcp->f("proddescr")).'<br />';
 	echo ' '.$relflg.fc_text("nocharge")."\n";
   }
   echo "</option>\n";
-  
+
   $poptgrpcnt++;		// incr count of options per group
   $poptogrp=$poptgrp;	// keep the current group ID
   $poptoflg=$poptflag1;	// keep the current group flag set
-  
+
   $i++;
  } while( $fco->next_record() );
  $fco->free_result();
@@ -462,7 +462,7 @@ echo stripslashes($fcp->f("proddescr")).'<br />';
  } // if product options
 } // end if product has option defined  (bvo)
  ?>
- 
+
 </td></tr>
 <tr><td align="left" valign="bottom" colspan="1">
 <i><?php echo fc_text("sku"); ?> <?php $prodsku=$fcp->f("prodsku"); echo $prodsku; ?></i>
@@ -512,7 +512,7 @@ if( $fcw->f("webflags1") & $flag_webshowqty ) {
   $qty="";
 }
 
-	if( $fcp->f('produseinvq') == 0 || 
+	if( $fcp->f('produseinvq') == 0 ||
 		  $fcp->f('produseinvq') && $fcp->f('prodinvqty') > 0
 		){
 ?>
@@ -566,7 +566,7 @@ echo "<i>$retailprc</i>";
 <tr><td align="left" valign="top" colspan="3">
 <hr />
 </td></tr>
-<?php 
+<?php
 } // end of product display loop
 } // end of fp_cat check
 ?>
@@ -580,7 +580,7 @@ echo "<i>$retailprc</i>";
 <!--CLOSE CELL/ROW/TABLE OF THE MAIN 100% WRAPPER TABLE-->
 </td></tr></table>
 
-<?php // VENDOR INFORMATION 
+<?php // VENDOR INFORMATION
 include ('vendinfo.php');
 //END OF VENDOR INFORMATION ?>
 

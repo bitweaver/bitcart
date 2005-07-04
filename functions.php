@@ -419,6 +419,7 @@ function do_esd () {
 }
 
 function show_countries( $zid, $lid, $matchiso, $lang_iso ){
+	$ret = NULL;
 	$fct = new FC_SQL;
 	$fct->query(
      "select ctrylangciso,ctrylangname from country,countrylang ".
@@ -432,9 +433,10 @@ function show_countries( $zid, $lid, $matchiso, $lang_iso ){
 		}else{
 			$chk = '';
 		}
-		echo "<option value=\"$iso\"$chk>$name</option>\n";
+		$ret .= "<option value=\"$iso\"$chk>$name</option>\n";
 	}
 	$fct->free_result();
+	return $ret;
 }
 
 function parse_sql_file($filename) {

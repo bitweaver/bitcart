@@ -115,7 +115,7 @@ marginheight="0" marginwidth="0" topmargin="0" leftmargin="0">
 </p>
 </td></tr>
 </table>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
 <?php 
 }
 
@@ -1160,4 +1160,4 @@ if($fcv->f("vsvcemail")){?><a href="mailto:<?php echo stripslashes($fcv->f("vsvc
 </td></tr></table>
 
 </td></tr></table>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>

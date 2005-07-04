@@ -218,7 +218,7 @@ if($zt>0){?>
 <select name="country" size="1">
 <option value="">[select a country]</option>
 <?php
-show_countries( $zid, $lid, $country, $lang_iso );
+	print show_countries( $zid, $lid, $country, $lang_iso );
 ?>
 </select><p></p>
 <?php } ?>
@@ -257,4 +257,4 @@ include ('vendinfo.php');
 
 <? // END OF ESSENTIAL CART DISPLAY CODE ?>
 
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>

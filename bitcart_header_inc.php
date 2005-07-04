@@ -1,6 +1,8 @@
 <?php
 
-// We need to buffer output
-ob_start();
+if( empty( $mid ) ) {
+	// We need to buffer output
+	ob_start();
+}
 
 ?>

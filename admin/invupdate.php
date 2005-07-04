@@ -163,4 +163,4 @@ echo "<tr><td colspan=\"3\" align=\"center\">$updated Record(s) ".
 }//end parse
 
 ?>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>

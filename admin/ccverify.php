@@ -27,6 +27,7 @@ USA.
    fax:   972.669.8972
 */
 
+require_once( '../../bit_setup_inc.php' );
 require_once( BITCART_PKG_PATH.'functions.php');
 
 // ========== start of variable loading ==========
@@ -53,6 +54,7 @@ if($cc_number==0 || $cctype==""){
   exit;
 }
 require_once( BITCART_PKG_PATH.'cc.php');
+$cc_number = preg_replace( "/\D/", '', $cc_number );
 $rv=cc_mod10($cctype,$cc_number);
 if($rv==0){
   echo "The CC number $cc_number did not verify.\n";

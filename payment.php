@@ -259,7 +259,7 @@ $fcl->free_result();
 <option value="">[  <?php echo fc_text('selectctry');?>  ]</option>
 <?php
 if($cc){ $billiso=$fcc->f("custbnatl"); }else{ $billiso=''; }
-show_countries( $zid, $lid, $billiso, $lang_iso );
+ print show_countries( $zid, $lid, $billiso, $lang_iso );
 ?>
 </select>
 </td></tr>
@@ -406,4 +406,4 @@ include ('vendinfo.php');
 <?php // END OF ESSENTIAL CART DISPLAY CODE ?>
 
 </center>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>

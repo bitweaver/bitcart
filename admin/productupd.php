@@ -222,7 +222,7 @@ if ($prodpackage) {
 
 /*
 here we fetch prodflag1 from the database to add anything not
-used in productmod.php to flag1 again otherwise some of the 
+used in productmod.php to flag1 again otherwise some of the
 current content of any other flag will be removed
 we only need this query if the product database is updated
 
@@ -252,7 +252,7 @@ if ($act == 'insert') {
     $fcl->free_result();
 
     $fcp->query("select prodsku from prod ".
-	    "where prodsku='$sku' and prodzid=$zoneid"); 
+	    "where prodsku='$sku' and prodzid=$zoneid");
     if( $fcp->next_record() ){
         echo "<p>A product with SKU# $sku already exists.<br />Please use ".
             "\"Product Maintenance\" to change.</p>\n";
@@ -268,17 +268,17 @@ if ($act == 'insert') {
         	"$sedate,$saleprice,$stssdate,$stsedate,$stsaleprice,$rtlprice,".
 			"$prodseq,$ordmax,$flag1,$prodcharge,".
 	        "'$prodmcode',$psdate,$pedate,'$prodisbn',$prodweight,".
-	        "$prodwidth,$prodheight,$prodlength)");  
+	        "$prodwidth,$prodheight,$prodlength)");
     }
     $fcp->free_result();
 
     $fcp->query("select nprodsku from nprod ".
-        "where nprodsku='$sku' and nzid=$zoneid"); 
+        "where nprodsku='$sku' and nzid=$zoneid");
     if ( $fcp->next_record() ) {
         echo 'Product already listed in New Products<br />';
     } else {
         $fcw->query("select webdaysinnew from web ".
-            "where webzid=$zoneid and weblid=$langid"); 
+            "where webzid=$zoneid and weblid=$langid");
         if ( !$fcw->next_record() ) {
             echo '<p>Internal error: web table not found for zone: '.$zoneid.
                 'and language: '.$langid.'.  Contact FishNet support '.
@@ -326,13 +326,13 @@ if ($act == 'insert') {
         "prodwidth=$prodwidth,".
 		"prodheight=$prodheight,".
 		"prodlength=$prodlength ".
-        "where prodsku='$oldsku' and prodzid=$zoneid"); 
+        "where prodsku='$oldsku' and prodzid=$zoneid");
 
 	// modify this SKU in the product/category database if needed
 
     if ( $sku != $oldsku ) {
 	    $res = $fcp->query("update prodcat ".
-		    "set pcatsku='$sku' where pcatsku='$oldsku' and pcatzid=$zoneid"); 
+		    "set pcatsku='$sku' where pcatsku='$oldsku' and pcatzid=$zoneid");
     }
 
   } // !$add_lang_only
@@ -344,25 +344,25 @@ if ($act == 'insert') {
 } elseif ( $act == 'delete' ) {
 
     $fcp->query("delete from prod where prodsku='$sku' ".
-                "and prodzid=$zoneid"); 
+                "and prodzid=$zoneid");
     $fcp->query("delete from prodlang where prodlsku='$sku' ".
-                "and prodlzid=$zoneid"); 
+                "and prodlzid=$zoneid");
 
     /* Delete this product from product/category and new items database */
 
     $fcp->query("delete from prodcat ".
- 	    "where pcatsku='$sku' and pcatzid=$zoneid"); 
+ 	    "where pcatsku='$sku' and pcatzid=$zoneid");
 
     $fcp->query("delete from nprod where nprodsku='$sku' ".
-                "and nzid=$zoneid"); 
+                "and nzid=$zoneid");
 
     // categories can contain SKUs; see if this is referenced
 
     $fcc->query("select catval from cat where catsku='$sku' ".
-                "and catzid=$zoneid"); 
+                "and catzid=$zoneid");
     while ( $fcc->next_record() ) {
         $fcu->query("update cat set catsku='' where catval=$val ".
-                "and catzid=$zoneid"); 
+                "and catzid=$zoneid");
     }
     $fcc->free_result();
 
@@ -477,7 +477,7 @@ if ( !$proderr ) {
 		        "'$ttpic',$ttpich,$ttpicw,'$tbanr',$tbanrh,$tbanrw,".
 		        "'$tkeyword','$tname',".
 		        "'$taudio','$tvideo','$tsplash','$tsdescr','$toffer','$dload',".
-		        "'$prodauth','$prodauthurl','$prodleadtime','$tpersvc')");  
+		        "'$prodauth','$prodauthurl','$prodleadtime','$tpersvc')");
 
 	    } elseif ($act == 'update' || ($act == 'insert' && $pirc > 0) ) {
 
@@ -507,7 +507,7 @@ if ( !$proderr ) {
 		        "prodleadtime='$prodleadtime',".
 		        "prodpersvc='$tpersvc' ".
 		        "where prodlsku='$oldsku' and prodlzid=$zoneid ".
-				" and prodlid=$prodlid"); 
+				" and prodlid=$prodlid");
 
 	    }
 
@@ -519,11 +519,11 @@ if ( !$proderr ) {
 	            if ($act == 'update'){
 	                $fcp->query("select pcatsku from prodcat ".
 	                    "where pcatsku='$oldsku' and pcatzid=$zoneid ".
-						"and pcatval=$pc"); 
+						"and pcatval=$pc");
 	            }else{
 	                $fcp->query("select pcatsku from prodcat ".
 	                    "where pcatsku='$sku' and pcatzid=$zoneid ".
-						"and pcatval=$pc"); 
+						"and pcatval=$pc");
 	            }
 	            if( $fcp->next_record() ){
                     echo 'Product/category association for '.$sku.'/'.$pc.
@@ -543,11 +543,11 @@ if ( !$proderr ) {
 	                        "where pcatsku='$oldsku' and pcatzid=$zoneid");
 	  	            }
 	            }
-	        } // if ($pc != 0) 
+	        } // if ($pc != 0)
 	        $k++;
-	    } // while ($k < 3) 
+	    } // while ($k < 3)
 	    $i++;
-    } // while ($i < $lt) 
+    } // while ($i < $lt)
 
     $fcp->commit();
     echo "Work committed.<br />\n";

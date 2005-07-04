@@ -217,7 +217,7 @@ if( ($zflag1 & $flag_zonetclink) && ($approvetc == 0) ){
 <p>
 <a href="<?php echo $nsecurl ?>/">ATZ <?php echo fc_text('homepage'); ?></a>
 </p>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
 <?php
   $fcoc->rollback();
   if ( $databaseeng == 'mysql' ){
@@ -256,7 +256,7 @@ if( $contrib_only ) {
 </head>
 <body bgcolor="#FFFFFF">
 <?php echo fc_text('contribblank');?>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
 <?php
   $fcoc->rollback();
   if ( $databaseeng == 'mysql' ){
@@ -292,7 +292,7 @@ if( $contrib_only ) {
 </head>
 <body bgcolor="#FFFFFF">
 <?php echo fc_text('payamblank');?>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
 <?php
   $fcoc->rollback();
   if ( $databaseeng == 'mysql' ){
@@ -348,7 +348,7 @@ if($billing_first=="" || $billing_last=="" ||
 <body bgcolor="#FFFFFF">
 <?php  
   echo fc_text('invalidfield');?>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
 <?php
   $fcoc->rollback();
   if ( $databaseeng == 'mysql' ){
@@ -370,7 +370,7 @@ if(!eregi("^[a-z0-9_\'\.-]+@[a-z0-9_\.-]+\.[a-z]{2,4}$",$billing_email)){ ?>
 <body bgcolor="#FFFFFF">
 <?php  
   echo fc_text('invalidemail');?>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
 <?php
   $fcoc->rollback();
   if ( $databaseeng == 'mysql' ){
@@ -391,7 +391,7 @@ if( $onoff != 'on' && $onoff != 'off' ){?>
 <body bgcolor="#FFFFFF">
 <?php  
   echo fc_text('invalidoffon');?>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
 <?php
   $fcoc->rollback();
   if ( $databaseeng == 'mysql' ){

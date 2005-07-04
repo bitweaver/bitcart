@@ -228,4 +228,4 @@ if($fcv->f("vsvcemail")){?><a href="mailto:<?php echo stripslashes($fcv->f("vsvc
 <?php // VENDOR INFORMATION 
 include ('vendinfo.php');
 //END OF VENDOR INFORMATION ?>
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>

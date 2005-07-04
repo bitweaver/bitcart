@@ -212,4 +212,4 @@ Return To Central Maintenance Page</a><br>
 </table>
 </center>
 
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>

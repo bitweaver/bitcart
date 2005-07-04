@@ -771,4 +771,4 @@ include ('vendinfo.php');
 
 <?php // END OF ESSENTIAL CART DISPLAY CODE ?>
 
-<?php require_once( FISHCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>
+<?php require_once( BITCART_PKG_PATH.'bitcart_footer_inc.php' ); ?>

@@ -27,7 +27,6 @@ USA.
    fax:   972.669.8972
 */
 
-header("Expires: ".GMDate("D, d M Y H:i:s")." GMT");
 require_once( '../../bit_setup_inc.php' );
 $gBitSystem->verifyPermission( 'bit_p_bitcart_admin' );
 
@@ -120,7 +119,7 @@ $fcc = new FC_SQL;
 $fdc = new FC_SQL;
 $fdcu = new FC_SQL;
 
-// get the path to cat from the upline cat	
+// get the path to cat from the upline cat
 if( $catunder ){
   $path= new FC_SQL;
   $path->query("select catpath from cat where catval=$catunder");
@@ -147,7 +146,7 @@ if($act=="insert") {
   $max_ref->query("select catval from cat order by catval desc limit 0,1");
  } // end what category if statement
 
- $max_ref->next_record();	
+ $max_ref->next_record();
  $ref=(int)$max_ref->f("catval")+1;
  $max_ref->free_result();
 
@@ -164,7 +163,7 @@ if($act=="insert") {
  "'$sku','$webtext','$catmast','$cattmpl','$catsort','$catfree',".
  "$catact,$catunder,'$pathto$ref:',$prodpage,$catcols)");
  // the 0 above sets it to a master category
-	
+
 } elseif($act=="update") {
 
   $res = $fcc->query("update cat ".
@@ -176,29 +175,29 @@ if($act=="insert") {
   "catmast='$catmast', cattmpl='$cattmpl', catsort='$catsort', ".
   "catfree='$catfree', catprodpage=$prodpage, catunder=$catunder, ".
   "catpath='$pathto$cat:', catcols=$catcols ".
-  "where catzid=$zoneid and catlid=$langid and catval=$cat"); 
+  "where catzid=$zoneid and catlid=$langid and catval=$cat");
 
   // they can't change the 'val' field, no need to touch prodcat
 
 } elseif($act=="delete"){
 
   $res = $fcc->query("delete from cat ".
-  	"where catzid=$zoneid and catlid=$langid and catval=$cat"); 
+  	"where catzid=$zoneid and catlid=$langid and catval=$cat");
 
   // delete references to this cat from others
   $dc = $fdc->query("select catval,catpath from cat ".
-  	"where catzid=$zoneid and catlid=$langid and catpath like '%:$cat:%'"); 
+  	"where catzid=$zoneid and catlid=$langid and catpath like '%:$cat:%'");
   while( $fdc->next_record ){
   	$cv = (int)$fdc->f('catval');
   	$cp = (int)$fdc->f('catpath');
 	$cp = ereg_replace(".*:$cat:.*", ":", $cp);
-	$fdcu->query("update cat set catpath='$cp' where catval=$cv"); 
+	$fdcu->query("update cat set catpath='$cp' where catval=$cv");
   } // end delete while loop
 
   // Delete this category from the product/category database
 
   $fcc->query("delete from prodcat ".
-	"where pcatzid=$zoneid and pcatval=$cat"); 
+	"where pcatzid=$zoneid and pcatval=$cat");
 
 } // end insert/update/delete if statement
 if(!$res){

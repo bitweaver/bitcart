@@ -34,12 +34,14 @@ Assumes functions.php has already been included.
 
 */
 
+global $cartid, $zid, $fct, $fasz, $fco;
 // avoid direct calls; only works if register_globals is off
 if( empty($zid) ){ exit; }
 
 $now=time();
 
-$fao->query("select * from oline where orderid='$cartid'"); 
+$fao=new FC_SQL;
+$fao->query("select * from oline where orderid='$cartid'");
 if($fao->next_record()){
 ?>
 <tr><td class="subdivrow" align="center" valign="top" bgcolor="#CCCCCC" width="310">
@@ -52,7 +54,7 @@ if($fao->next_record()){
 <b><?php echo fc_text('total'); ?></b>
 </td></tr>
 
-<?php 
+<?php
 $i=0;
 $tqty=0;
 $fcp = new FC_SQL;
@@ -145,7 +147,7 @@ do{ // already have the first record
 
 </td><td class="showcartcell" align="center" valign="top" bgcolor="#FFFFFF">
 
-<?php 
+<?php
  if($invover>0){echo"*** ";$invshort=1;}
  if( $allowupdate ){
   echo "<input name=\"qty$i\" size=\"3\" value=\"$qty\" /><br />\n";
@@ -158,7 +160,7 @@ do{ // already have the first record
 
 </td><td class="showcartcell" align="right" valign="top" bgcolor="#FFFFFF">
 
-<?php 
+<?php
  	// figure options modified product price, accumulate $prodsetttot
 	// sets various globals
 	$prodprice = prod_price ( $sku );
@@ -176,7 +178,7 @@ do{ // already have the first record
 
 </td><td class="showcartcell" align="right" valign="top" bgcolor="#FFFFFF">
 
-<?php 
+<?php
 	$ltotal=line_total( $qty, $prodprice );
 	$tqty=rnd($tqty+$qty);
 	$lweight=rnd($qty * $prodweight);
@@ -315,7 +317,7 @@ if( ($taxpern || $taxpers) && $ttotal ){
 <td class="showcartcell" colspan="2" align="left" valign="top" bgcolor="#FFFFFF">
 <b><?php echo fc_text('salestax'); ?></b><br />
 </td><td class="showcartcell" colspan="1" align="right" valign="top" bgcolor="#FFFFFF">
-<?php 
+<?php
 $tpn=0.0;
 $tps=0.0;
 if( $taxpern ){ // nontaxable shipping
@@ -353,7 +355,7 @@ if( (0 && $allowupdate && !($zflag1 & $flag_zoneinlinecontrib)) ||
 <td class="showcartcell" colspan="2" align="left" valign="top" bgcolor="#FFFFFF">
 <b><?php echo fc_text('voluntary'); ?></b><br />
 </td><td class="showcartcell" colspan="1" align="right" valign="top" bgcolor="#FFFFFF">
-<?php 
+<?php
 if( $allowupdate ){
  printf("<input name=\"contrib\" size=\"6\" value=\"%.2f\" onChange=\"submit(); return false;\" /><br />\n",$contamt);
 }else{
@@ -383,7 +385,7 @@ if( ($taxpern || $taxpers) && $mtotal ){
 <td class="showcartcell" colspan="2" align="left" valign="top" bgcolor="#FFFFFF">
 <b><?php echo fc_text('psalestax'); ?></b><br />
 </td><td class="showcartcell" colspan="1" align="right" valign="top" bgcolor="#FFFFFF">
-<?php 
+<?php
 $tpn=0.0;
 $tps=0.0;
 if( $taxpern ){ // nontaxable shipping

@@ -32,7 +32,13 @@ $errorEmail =$gBitSystem->getErrorEmail();
 
 
 function imagepath($img) {
- if( ereg("^/",$img) ) { return 'BITCART_PKG_PATH'; }
+ if( ereg( "http", $img ) ) {
+  return $img;
+ } elseif( ereg("^/",$img) ) {
+  return BIT_ROOT_PATH;
+ } elseif( ereg("^/",$img) ) {
+  return BITCART_PKG_PATH;
+ }
  else{ return '../'; }
 }
 
