@@ -30,11 +30,6 @@ $databaseeng = $gBitDbType;
 $dialect  = '';
 
 class DBbase_Sql {
-  var $Host     = "";
-  var $Database = "";
-  var $User     = "";
-  var $Password = "";
-
   var $Link_ID  = 0;
   var $Query_ID = 0;
   var $Record   = array();
@@ -51,13 +46,13 @@ class DBbase_Sql {
 	if ( 0 == $this->Link_ID ) {
 		global $gBitDbName, $gBitDbHost, $gBitDbUser, $gBitDbPassword;
 		$cstr = "dbname=".$gBitDbName;
-		if( $this->Host ){
+		if( $gBitDbHost ){
 		 $cstr .= ' host='.$gBitDbHost;
 		}
-		if( $this->User ){
+		if( $gBitDbUser ){
 		 $cstr .= ' user='.$gBitDbUser;
 		}
-		if( $this->Password ){
+		if( $gBitDbPassword ){
 		 $cstr .= ' password='.$gBitDbPassword;
 		}
 		$this->Link_ID=pg_pconnect($cstr);
@@ -174,11 +169,6 @@ if( $gDebug ) {
 }
 
 class FC_SQL extends DBbase_Sql {
-  var $Host     = "localhost";
-  var $Database = "fishcart";
-  var $User     = "cfowler";
-  var $Password = "";
-
   function free_result() {
    if($this->Query_ID) {
     return @pg_FreeResult($this->Query_ID);
