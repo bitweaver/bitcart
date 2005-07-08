@@ -807,7 +807,7 @@ $tables = array(
 global $gBitInstaller;
 
 foreach( array_keys( $tables ) AS $tableName ) {
-	$gBitInstaller->registerSchemaTable( BITCART_PKG_DIR, $tableName, $tables[$tableName] );
+	$gBitInstaller->registerSchemaTable( BITCART_PKG_NAME, $tableName, $tables[$tableName] );
 }
 
 $gBitInstaller->registerPackageInfo( BITCART_PKG_NAME, array(
@@ -939,7 +939,7 @@ create unique index oprod_ndx  on oprod (oprodsku);
 create unique index prod_ndx  on prod (prodsku);
 create unique index ridlnk_ndx on auxlinks ("rid");
 create unique index ridtxt_ndx on auxlinks ("rid"););
-$gBitInstaller->registerSchemaIndexes( BITCART_PKG_DIR, $indices );
+$gBitInstaller->registerSchemaIndexes( BITCART_PKG_NAME, $indices );
 
 // ### Default Preferences
 $gBitInstaller->registerPreferences( BITCART_PKG_NAME, array(
