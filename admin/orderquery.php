@@ -180,7 +180,7 @@ Maximum Order Amount:
 <center>Optional Report Date Range:<br>
 <i>all date values must be entered</i></center>
 <p>
-<form method=post action="<?php echo $PHP_SELF ?>">
+<form method=post action="<?php echo $_SERVER['SCRIPT_NAME'] ?>">
 Beginning 4 Digit <b>Y</b>ear / <b>M</b>onth / <b>D</b>ay:<br>
 <input name=begyear size=4> / <input name=begmo size=2> / <input name=begday size=2>
 <p>

@@ -36,7 +36,7 @@ require('./header.php');
 
 echo "<center><table border=\"0\" cellpadding=\"4\" width=\"650\" cellspacing=\"1\"><tr><td align=center bgcolor=#ffffff class=\"text\">";
 if($rehash && !$instid){
- print "$PHP_SELF is not picking up the \"\$instid\" variable.  This needs to be set in the script ($PHP_SELF) before this program can continue.  This value is the name of your shopping cart.  If you don't know where to find this value, it is usually the directory in which the cart resides.  It is also littered throughout the maintenance scripts.";
+ print "$_SERVER[SCRIPT_NAME] is not picking up the \"\$instid\" variable.  This needs to be set in the script ($_SERVER[SCRIPT_NAME]) before this program can continue.  This value is the name of your shopping cart.  If you don't know where to find this value, it is usually the directory in which the cart resides.  It is also littered throughout the maintenance scripts.";
 }
 
 // check the height and width for all pics in the cart

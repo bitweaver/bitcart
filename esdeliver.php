@@ -168,7 +168,7 @@ $fcesp->free_result();
 
 <table border="0" cellpadding="5">
 <tr><td>
-<form method="post" action="<?php echo $PHP_SELF ?>">
+<form method="post" action="<?php echo $_SERVER['SCRIPT_NAME'] ?>">
 <?php echo fc_text('dlusername') ?>
 </td><td>
 <input name="pwuid" size="20" /><br />
