@@ -399,7 +399,7 @@ if( isset($CookieCustID) ){
 <input type="hidden" name="ccexp_years" value="<?php echo $ccexp_years?>" />
 
 <input type="hidden" name="referer" value="<?php echo $REMOTE_ADDR?>" />
-<input type="submit" class="btn" value="{tr}ordersubmit{/tr}" />
+<input type="submit" class="btn btn-default" value="{tr}ordersubmit{/tr}" />
 
 </td><td class="orderformcell" align="center" valign="top" colspan="2" bgcolor="#FFFFFF">
 
